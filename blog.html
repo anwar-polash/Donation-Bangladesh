@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet" />
+    <!-- main css link -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- daisy ui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "pure-white": "#F9F7F3",
+              inchworm: "#B4F461",
+              "dreamless-sleep": "#111111",
+              "nav-color": "#F9F7F3",
+            },
+            fontFamily: {
+              " lexend": ['"Lexend"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <header>
+      <!-- nav section start -->
+      <nav class="bg-[#F9F7F3]">
+        <div
+          class="max-w-[1140px] px-4 min-[1150px]:px-0 mx-auto flex flex-col gap-y-4 justify-center items-center md:flex-row md:justify-between md:items-center py-[2rem] md:py-[3rem]">
+          <a
+            class="text-[#111] text-[1.25rem] font-semibold bg-[#B4F461] px-8 py-3 rounded-lg order-3 md:order-1"
+            href="index.html"
+            >Home</a
+          >
+
+          <div
+            class="flex justify-center items-center gap-2 order-1 md:order-2">
+            <img class="w-[3rem] h-[3rem]" src="./assets/logo.png" alt="" />
+            <h1 class="text-[#111] text-[1.25rem] font-semibold items-center">
+              Donate Bangladesh
+            </h1>
+          </div>
+          <div class="flex items-center gap-2 order-2 md:order-3">
+            <img src="./assets/coin.png" alt="" />
+            <h2 class="text-[#111111] text-[1.25rem] font-medium">5500 BDT</h2>
+          </div>
+        </div>
+      </nav>
+      <!-- nav section end -->
+    </header>
+    <!-- main section start -->
+    <main class="max-w-[1140px] px-4 min-[1150px]:px-0 mx-auto">
+      <h1 class="text-[#111] text-[3rem] font-bold capitalize pt-4">
+        Important <span class="uppercase">Faq</span>
+      </h1>
+      <!-- question and answer -->
+      <div class="join join-vertical w-full mt-4">
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-xl font-medium">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            What is event delegation in the context of the DOM, and why is it
+            useful?
+          </div>
+          <div class="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            How do you manipulate an element's attributes and styles using the
+            DOM?
+          </div>
+          <div class="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
