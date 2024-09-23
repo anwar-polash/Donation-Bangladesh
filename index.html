@@ -32,23 +32,24 @@
     </script>
   </head>
   <body>
-    <header class="polash">
+    <!-- header section start -->
+    <header class="">
       <!-- nav section start -->
       <nav class="bg-[#F9F7F3]">
         <div
-          class="polash max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto flex flex-col gap-y-4 justify-center items-center md:flex-row md:justify-between md:items-center py-8 md:py-6 space-y-4">
+          class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto flex flex-col gap-y-4 justify-center items-center md:flex-row md:justify-between md:items-center py-8 md:py-6 space-y-4">
           <button
-            class="text-[#111] text-[1.25rem] font-semibold bg-[#B4F461] px-8 py-3 rounded-lg order-3">
+            class="text-[#111] text-[1.25rem] font-semibold bg-[#B4F461] px-8 py-3 rounded-lg order-3 md:order-1">
             Blog
           </button>
 
-          <div class="flex items-center gap-2 order-1">
+          <div class="flex items-center gap-2 order-1 md:order-2">
             <img class="w-[3rem] h-[3rem]" src="./assets/logo.png" alt="" />
             <h1 class="text-[#111] text-[1.25rem] font-semibold">
               Donate Bangladesh
             </h1>
           </div>
-          <div class="flex items-center gap-2 order-2">
+          <div class="flex items-center gap-2 order-2 md:order-3">
             <img src="./assets/coin.png" alt="" />
             <h2 class="text-[#111111] text-[1.25rem] font-medium">5500 BDT</h2>
           </div>
@@ -57,10 +58,58 @@
       <!-- nav section end -->
       <!-- donation and history button  -->
       <div
-        class="polash max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto flex justify-center">
-        <button>Donation</button>
-        <button>History</button>
+        class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto flex justify-center items-center gap-x-4 pt-[3rem] md:pt-[5rem] pb-[2rem]">
+        <button
+          class="px-8 py-4 bg-[#B4F461] rounded-lg text-[#111111] text-[1.25rem] font-semibold">
+          Donation
+        </button>
+        <button class="text-[#111111] text-[1.25rem] font-medium">
+          History
+        </button>
       </div>
+      <!-- donation and history button  end -->
     </header>
+    <!-- header section end -->
+    <!-- main section start -->
+    <main class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto">
+      <section>
+        <!-- donate for noakhali secton -->
+        <div
+          class="max-w-[71.25rem] p-4 md:p-8 flex flex-col lg:flex-row gap-3 sm:gap-5 lg:gap-8 bg-white rounded-2xl border border-solid border-[#E7E7E7] shadow-xl">
+          <!-- noakhali flood images -->
+          <img
+            class="max-w-full h-auto"
+            src="./assets/noakhali.png"
+            alt="Album" />
+          <!-- noakhali flood description  -->
+          <div>
+            <div
+              class="flex items-center bg-[#F3F3F3] w-fit rounded-lg px-4 py-3 gap-x-2">
+              <img src="./assets/coin.png" alt="coin-img" />
+              <span class="text-[#111111] text-[1rem]">0 BDT</span>
+            </div>
+            <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
+              Donate for Flood at Noakhali, Bangladesh
+            </h3>
+            <p
+              class="pt-4 text-[#111111] text-[1rem] font-light leading-[1.625rem] text-justify">
+              The recent floods in Noakhali have caused significant damage to
+              homes infrastructure. Your donation will help provide essential
+              supplies and to those affected by this disaster. Every
+              contribution, big or small, makes difference. Please join us in
+              supporting the relief efforts and making a positive impact on the
+              lives of those in need.
+            </p>
+            <input
+              class="bg-white border border-solid border-[#E7E7E7] w-full p-[1.12rem] mt-4 rounded-lg"
+              type="text"
+              placeholder="Write Donation Amount" />
+            <button class="bg-[#B4F461] w-full pt-4 pb-4 mt-4 rounded-lg">
+              Donate Now
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
