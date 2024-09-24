@@ -58,19 +58,16 @@
           </div>
           <div class="flex items-center gap-2 order-2 md:order-3">
             <img src="./assets/coin.png" alt="" />
-            <h2 class="text-[#111111] text-[1.25rem] font-medium">5500 BDT</h2>
+            <h2 class="text-[#111111] text-[1.25rem] font-medium">
+              <span id="main-account">10000</span> BDT
+            </h2>
           </div>
         </div>
       </nav>
       <!-- nav section end -->
-    </header>
-    <!-- header section end -->
-    <!-- main section start -->
-    <main
-      class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto py-[3rem] md:py-[5rem]">
       <!-- donation and history button  -->
       <div
-        class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto flex justify-center items-center gap-x-4 pb-[2rem]">
+        class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto flex justify-center items-center gap-x-4 pt-[5rem] bg-[#F9F7F3] md:bg-white pb-4 md:pb-0">
         <button
           id="donation-tab"
           class="px-8 py-4 bg-[#B4F461] rounded-lg text-[#111111] text-[1.25rem] border border-solid border-[#E7E7E7] font-semibold">
@@ -83,6 +80,12 @@
         </button>
       </div>
       <!-- donation and history button  end -->
+    </header>
+    <!-- header section end -->
+    <!-- main section start -->
+    <main
+      id="main"
+      class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto pt-[2rem] pb-[5rem]">
       <section>
         <!-- donate noakhali section start -->
         <div
@@ -95,9 +98,9 @@
           <!-- noakhali flood description  -->
           <div>
             <div
-              class="flex items-center bg-[#F3F3F3] w-fit rounded-lg px-4 py-3 gap-x-2">
+              class="flex items-center text-[#111111] text-[1rem] bg-[#F3F3F3] w-fit rounded-lg px-4 py-3 gap-x-2">
               <img src="./assets/coin.png" alt="coin-img" />
-              <span class="text-[#111111] text-[1rem]">0 BDT</span>
+              <span id="noakhali-donation-account">5000</span> BDT
             </div>
             <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
               Donate for Flood at Noakhali, Bangladesh
@@ -112,10 +115,12 @@
               lives of those in need.
             </p>
             <input
+              id="noakhali-donation-input"
               class="bg-white border border-solid border-[#E7E7E7] w-full p-[1.12rem] mt-4 rounded-lg text-[1rem]"
               type="text"
               placeholder="Write Donation Amount" />
             <button
+              id="noakhali-donation-btn"
               class="bg-[#B4F461] w-full pt-4 pb-4 mt-4 rounded-lg text-[1.25rem] text-[#111] font-semibold">
               Donate Now
             </button>
@@ -133,7 +138,9 @@
             <div
               class="flex items-center bg-[#F3F3F3] w-fit rounded-lg px-4 py-3 gap-x-2">
               <img src="./assets/coin.png" alt="coin-img" />
-              <span class="text-[#111111] text-[1rem]">600 BDT</span>
+              <h2 class="text-[#111111] text-[1rem]">
+                <span id="feni-doante-account">2000</span> BDT
+              </h2>
             </div>
             <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
               Donate for Flood Relief in Feni,Bangladesh
@@ -150,10 +157,12 @@
               urgent need.
             </p>
             <input
+              id="feni-donate-input"
               class="bg-white border border-solid border-[#E7E7E7] w-full p-[1.12rem] mt-4 rounded-lg text-[1rem]"
               type="text"
               placeholder="Write Donation Amount" />
             <button
+              id="feni-donate-btn"
               class="bg-[#B4F461] w-full pt-4 pb-4 mt-4 rounded-lg text-[1.25rem] text-[#111] font-semibold">
               Donate Now
             </button>
@@ -174,7 +183,9 @@
             <div
               class="flex items-center bg-[#F3F3F3] w-fit rounded-lg px-4 py-3 gap-x-2">
               <img src="./assets/coin.png" alt="coin-img" />
-              <span class="text-[#111111] text-[1rem]">2400 BDT</span>
+              <h2 class="text-[#111111] text-[1rem]">
+                <span id="injure-donate-account">2400</span> BDT
+              </h2>
             </div>
             <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
               Aid for Injured in the Quota Movement
@@ -192,10 +203,12 @@
               their time of need.
             </p>
             <input
+              id="injure-donate-input"
               class="bg-white border border-solid border-[#E7E7E7] w-full p-[1.12rem] mt-4 rounded-lg text-[1rem]"
               type="text"
               placeholder="Write Donation Amount" />
             <button
+              id="injure-donate-btn"
               class="bg-[#B4F461] w-full pt-4 pb-4 mt-4 rounded-lg text-[1.25rem] text-[#111] font-semibold">
               Donate Now
             </button>
@@ -203,8 +216,12 @@
           <!--  quota description end -->
         </div>
         <!-- donate Quota Movement section end -->
+        <!-- history -->
+      </section>
+      <section class="history-list">
+        <div class=""></div>
       </section>
     </main>
-    <script src="./js/donation.js"></script>
+    <script src="./js/fund.js"></script>
   </body>
 </html>
