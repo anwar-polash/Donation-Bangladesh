@@ -1,27 +1,28 @@
 function getElementById(id) {
   return document.getElementById(id);
 }
+function getInnerTextById(id) {
+  return document.getElementById(id).innerText;
+}
 // noakhali donation calculation
 const noakhaliDonationButton = document.getElementById("noakhali-donation-btn");
 noakhaliDonationButton.addEventListener("click", function (event) {
   event.preventDefault();
   // main account
-  const mainAccount = document.getElementById("main-account").innerText;
-  mainAccountEl = parseFloat(mainAccount);
+  const mainAccount = getInnerTextById("main-account");
+  const mainAccountEl = parseFloat(mainAccount);
   // noakhali donation account
-  const noakhaliDonationAccount = document.getElementById(
-    "noakhali-donation-account"
-  ).innerText;
-  noakhaliDonationAccountEl = parseFloat(noakhaliDonationAccount);
+  const noakhaliDonationAccount = getInnerTextById("noakhali-donation-account");
+  const noakhaliDonationAccountEl = parseFloat(noakhaliDonationAccount);
   // noakhali donation input
   const noakhaliDonationInput = document.getElementById(
     "noakhali-donation-input"
   ).value;
-  noakhaliDonationInputEl = parseFloat(noakhaliDonationInput);
+  const noakhaliDonationInputEl = parseFloat(noakhaliDonationInput);
   if (
     noakhaliDonationInputEl === "" ||
     noakhaliDonationInputEl <= 0 ||
-    noakhaliDonationInputEl >= mainAccountEl ||
+    noakhaliDonationInputEl > mainAccountEl ||
     isNaN(noakhaliDonationInputEl)
   ) {
     alert("please input valid amount");
@@ -36,36 +37,51 @@ noakhaliDonationButton.addEventListener("click", function (event) {
   document.getElementById("noakhali-donation-account").innerText =
     newNoakhaliAccount;
 
+  // add history
+  const nkTitle = getInnerTextById("nk-title");
+  const historyContainer = getElementById("history-section");
   const historyItem = document.createElement("div");
-  historyItem.className =
-    "bg-red p-5 rounded-md border border-solid border-indigo-500";
+  historyItem.classList.add(
+    "p-8",
+    "border",
+    "border-solid",
+    "border-[#111]/20",
+    "shadow-md",
+    "rounded-2xl"
+  );
   historyItem.innerHTML = `
-    <p>${newMainAccount.toFixed(2)}</p>
+   <h2 class="font-bold text-[#111] text-xl">${noakhaliDonationInputEl} TK, ${nkTitle} </h2>
+  <p class="mt-4 text-base font-light text-[#111]/70">Date: ${new Date().toLocaleString()}</p>
   `;
-  const historyList = document.getElementById("history-list");
-  historyList.insertBefore(historyList, historyItem.firstChild);
+  historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+  // clear input
+  getElementById("noakhali-donation-input").value = "";
+
+  // modal
+  getElementById("confirm-modal").classList.add("modal-open");
+  getElementById("close-modal-btn").addEventListener("click", function () {
+    getElementById("confirm-modal").classList.remove("modal-open");
+  });
 });
 
 // ===============
 // feni donate calculation
-const feniDonateButton = document.getElementById("feni-donate-btn");
-feniDonateButton.addEventListener("click", function (event) {
-  event.preventDefault();
+const feniDonateButton = getElementById("feni-donate-btn");
+feniDonateButton.addEventListener("click", function () {
   // main account
-  const mainAccount = document.getElementById("main-account").innerText;
-  mainAccountEl = parseFloat(mainAccount);
+  const mainAccount = getInnerTextById("main-account");
+  const mainAccountEl = parseFloat(mainAccount);
   // feni donation account
-  const feniDonateAccount = document.getElementById(
-    "feni-doante-account"
-  ).innerText;
-  feniDonateAccountEl = parseFloat(feniDonateAccount);
+  const feniDonateAccount = getInnerTextById("feni-doante-account");
+  const feniDonateAccountEl = parseFloat(feniDonateAccount);
   //feni donation input
   const feniDonationInput = document.getElementById("feni-donate-input").value;
-  feniDonationInputEl = parseFloat(feniDonationInput);
+  const feniDonationInputEl = parseFloat(feniDonationInput);
   if (
     feniDonationInputEl === "" ||
     feniDonationInputEl <= 0 ||
-    feniDonationInputEl >= mainAccountEl ||
+    feniDonationInputEl > mainAccountEl ||
     isNaN(feniDonationInputEl)
   ) {
     alert("please input valid amount");
@@ -77,28 +93,51 @@ feniDonateButton.addEventListener("click", function (event) {
   // feni donation amount add feni donation account
   const newFeniAccount = feniDonationInputEl + feniDonateAccountEl;
   document.getElementById("feni-doante-account").innerText = newFeniAccount;
-  feniDonationInputEl.value = "";
+
+  // add history
+  const fnTitle = getInnerTextById("fn-title");
+  const historyContainer = getElementById("history-section");
+  const historyItem = document.createElement("div");
+  historyItem.classList.add(
+    "p-8",
+    "border",
+    "border-solid",
+    "border-[#111]/20",
+    "shadow-md",
+    "rounded-2xl"
+  );
+  historyItem.innerHTML = `
+    <h2 class="font-bold text-[#111] text-xl">${feniDonationInputEl} TK, ${fnTitle} </h2>
+   <p class="mt-4 text-base font-light text-[#111]/70">Date: ${new Date().toLocaleString()}</p>
+   `;
+  historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+  // clear input
+  getElementById("feni-donate-input").value = "";
+
+  // modal
+  getElementById("confirm-modal").classList.add("modal-open");
+  getElementById("close-modal-btn").addEventListener("click", function () {
+    getElementById("confirm-modal").classList.remove("modal-open");
+  });
 });
 // ===============
 //injure donation calculation
-const injureDonateButton = document.getElementById("injure-donate-btn");
-injureDonateButton.addEventListener("click", function (event) {
-  event.preventDefault();
+const injureDonateButton = getElementById("injure-donate-btn");
+injureDonateButton.addEventListener("click", function () {
   //  main account
-  const mainAccount = document.getElementById("main-account").innerText;
-  mainAccountEl = parseFloat(mainAccount);
+  const mainAccount = getInnerTextById("main-account");
+  const mainAccountEl = parseFloat(mainAccount);
   // injure donation account
-  const injureDonationAccount = document.getElementById(
-    "injure-donate-account"
-  ).innerText;
-  injureDonationAccountEl = parseFloat(injureDonationAccount);
+  const injureDonationAccount = getInnerTextById("injure-donate-account");
+  const injureDonationAccountEl = parseFloat(injureDonationAccount);
   // injure donation input
   const injureInput = document.getElementById("injure-donate-input").value;
-  injureInputEl = parseFloat(injureInput);
+  const injureInputEl = parseFloat(injureInput);
   if (
     injureInputEl === "" ||
     injureInputEl <= 0 ||
-    injureInputEl >= mainAccountEl ||
+    injureInputEl > mainAccountEl ||
     isNaN(injureInputEl)
   ) {
     alert("please input valid number");
@@ -110,6 +149,33 @@ injureDonateButton.addEventListener("click", function (event) {
   // injure donation amount separation from main account
   const newMainAccount = mainAccountEl - injureInputEl;
   document.getElementById("main-account").innerText = newMainAccount;
+
+  // add history
+  const injTitle = getInnerTextById("inj-title");
+  const historyContainer = getElementById("history-section");
+  const historyItem = document.createElement("div");
+  historyItem.classList.add(
+    "p-8",
+    "border",
+    "border-solid",
+    "border-[#111]/20",
+    "shadow-md",
+    "rounded-2xl"
+  );
+  historyItem.innerHTML = `
+     <h2 class="font-bold text-[#111] text-xl">${injureInputEl} TK, ${injTitle} </h2>
+    <p class="mt-4 text-base font-light text-[#111]/70">Date: ${new Date().toLocaleString()}</p>
+    `;
+  historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+  // clear input
+  getElementById("injure-donate-input").value = "";
+
+  // modal
+  getElementById("confirm-modal").classList.add("modal-open");
+  getElementById("close-modal-btn").addEventListener("click", function () {
+    getElementById("confirm-modal").classList.remove("modal-open");
+  });
 });
 // =============
 //  history button
@@ -119,6 +185,8 @@ historyButton.addEventListener("click", function (event) {
   historyButton.classList.add("bg-[#B4F461]");
   const donationButton = document.getElementById("donation-tab");
   donationButton.classList.remove("bg-[#B4F461]");
+  getElementById("history-section").classList.remove("hidden");
+  getElementById("donation-section").classList.add("hidden");
 });
 // donation button
 const donationButton = document.getElementById("donation-tab");
@@ -127,6 +195,6 @@ donationButton.addEventListener("click", function (event) {
   donationButton.classList.add("bg-[#B4F461]");
   const historyButton = document.getElementById("history-tab");
   historyButton.classList.remove("bg-[#B4F461]");
+  getElementById("history-section").classList.add("hidden");
+  getElementById("donation-section").classList.remove("hidden");
 });
-
-// history add

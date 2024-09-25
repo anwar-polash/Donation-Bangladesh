@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -86,7 +86,7 @@
     <main
       id="main"
       class="max-w-[1170px] px-4 min-[1180px]:px-0 mx-auto pt-[2rem] pb-[5rem]">
-      <section>
+      <section id="donation-section">
         <!-- donate noakhali section start -->
         <div
           class="max-w-[71.25rem] p-4 md:p-8 flex flex-col lg:flex-row gap-3 sm:gap-5 lg:gap-8 bg-white rounded-2xl border border-solid border-[#E7E7E7] shadow-xl">
@@ -102,7 +102,9 @@
               <img src="./assets/coin.png" alt="coin-img" />
               <span id="noakhali-donation-account">5000</span> BDT
             </div>
-            <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
+            <h3
+              id="nk-title"
+              class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
               Donate for Flood at Noakhali, Bangladesh
             </h3>
             <p
@@ -142,7 +144,9 @@
                 <span id="feni-doante-account">2000</span> BDT
               </h2>
             </div>
-            <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
+            <h3
+              id="fn-title"
+              class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
               Donate for Flood Relief in Feni,Bangladesh
             </h3>
             <p
@@ -187,7 +191,9 @@
                 <span id="injure-donate-account">2400</span> BDT
               </h2>
             </div>
-            <h3 class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
+            <h3
+              id="inj-title"
+              class="pt-[1rem] text-[#111] text-[1.25rem] font-bold">
               Aid for Injured in the Quota Movement
             </h3>
             <p
@@ -216,11 +222,27 @@
           <!--  quota description end -->
         </div>
         <!-- donate Quota Movement section end -->
-        <!-- history -->
       </section>
-      <section class="history-list">
-        <div class=""></div>
-      </section>
+
+      <!-- history -->
+      <section
+        id="history-section"
+        class="hidden space-y-3 max-w-[71.25rem] mx-auto p-4"></section>
+      <!-- Modal -->
+      <div id="confirm-modal" class="modal">
+        <div class="modal-box flex flex-col items-center gap-4">
+          <h3 class="text-2xl font-bold">Congres!</h3>
+          <img src="./assets/coin.png" alt="" />
+          <p class="text-xl">You Have Donated For Humankind.</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button id="close-modal-btn" class="btn">
+                Close Confirmation
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="./js/fund.js"></script>
   </body>
